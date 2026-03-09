@@ -1,8 +1,6 @@
+# Ignorer les dépendances et fichiers inutiles
 node_modules
-.env
+tests/
 .git
 .gitignore
 *.md
-Dockerfile
-.dockerignore
-tests/

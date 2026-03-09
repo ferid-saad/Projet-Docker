@@ -7,6 +7,6 @@ CREATE TABLE IF NOT EXISTS contacts (
 );
 
 INSERT INTO contacts (nom, email, telephone) VALUES
-('Arij Belaid', 'Arijbelaid@gmail.com', '0123456789'),
-('Omelkhir rbei', 'Omelkhirrbei@gmail.com', '0987654321'),
-('Hanine Ramdhane', 'Hanineramdhane@gmail.com', '0612345678');
+('ferid saad', 'fersd2018@gmail.com', '97460346'),
+('Med Kacem Saad', 'MedKacem@gmail.com', '97111222'),
+('Hadil Saad', 'Hadilsd@gmail.com', '97333444');
