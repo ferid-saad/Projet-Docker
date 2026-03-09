@@ -44,4 +44,12 @@ docker compose logs -f backend
 
 # Vérifier les ressources
 docker stats
+````
+## 📸 Commandes pour les captures obligatoires
+````
+docker compose ps        # Services Up et healthy
+docker network ls        # Vérifier les réseaux
+docker volume ls         # Vérifier le volume de données
+docker stats             # Limites de ressources
+docker inspect contacts-backend   # Vérifier health check
 
