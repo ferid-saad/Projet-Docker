@@ -1,16 +1,17 @@
 FROM nginx:alpine
 
-# Créer les dossiers nécessaires et donner les droits à l'utilisateur nginx
-RUN mkdir -p /var/run /var/cache/nginx /var/log/nginx /usr/share/nginx/html \
-    && chown -R nginx:nginx /var/run /usr/share/nginx/html /var/cache/nginx /var/log/nginx
+# Supprimer la config par défaut pour éviter les conflits
+RUN rm /etc/nginx/conf.d/default.conf
 
+# Copier les fichiers statiques
 COPY public/ /usr/share/nginx/html/
-RUN ls -l /usr/share/nginx/html
+
+# Copier ta configuration personnalisée
 COPY nginx.conf /etc/nginx/nginx.conf
 
-USER nginx
+# Corriger les permissions des fichiers statiques
+RUN chmod 644 /usr/share/nginx/html/*.html /usr/share/nginx/html/*.css /usr/share/nginx/html/*.js
 
 EXPOSE 80
 
-CMD ["nginx", "-g", "pid /tmp/nginx.pid; daemon off;"]
-
+CMD ["nginx", "-g", "daemon off;"]

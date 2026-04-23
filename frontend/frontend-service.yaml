@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: contacts-frontend-service
+spec:
+  selector:
+    app: contacts-frontend
+  type: NodePort
+  ports:
+    - protocol: TCP
+      port: 80          # Port exposé dans le cluster
+      targetPort: 80    # Port du conteneur
+      nodePort: 30081   # Port fixe sur le nœud (choisis un libre)
