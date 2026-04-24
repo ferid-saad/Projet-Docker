@@ -9,5 +9,5 @@ spec:
   ports:
     - protocol: TCP
       port: 80          # Port exposé dans le cluster
-      targetPort: 80    # Port du conteneur
+      targetPort: 8081   # Port du conteneur
       nodePort: 30081   # Port fixe sur le nœud (choisis un libre)
