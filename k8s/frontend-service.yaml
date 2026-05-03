@@ -7,7 +7,8 @@ spec:
     app: contacts-frontend
   type: NodePort
   ports:
-    - protocol: TCP
-      port: 80          # Port exposé dans le cluster
-      targetPort: 8081   # Port du conteneur
-      nodePort: 30081   # Port fixe sur le nœud (choisis un libre)
+  - protocol: TCP
+    port: 80
+    targetPort: 80  # Changé de 8081 à 80
+    nodePort: 30080  # Changé de 30081 à 30080
+    name: http

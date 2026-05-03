@@ -1,4 +1,4 @@
-apiVersion: networking.k8s.io/v1
+apiVersion: networking.k8s.io/v1  # Correction de la casse
 kind: Ingress
 metadata:
   name: contacts-frontend-ingress
@@ -6,12 +6,13 @@ metadata:
     traefik.ingress.kubernetes.io/router.entrypoints: web
 spec:
   rules:
-    - http:
-        paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: contacts-frontend-service
-                port:
-                  number: 80
+  - host: contacts.local  # Ajoutez cette ligne dans /etc/hosts sur votre poste
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: contacts-frontend-service
+            port:
+              number: 80
