@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: contacts-frontend
+  namespace: contacts-app
 spec:
   replicas: 2  # Changé de 1 à 2
   selector:
@@ -14,7 +15,7 @@ spec:
     spec:
       containers:
       - name: contacts-frontend
-        image: feridsaad/contacts-frontend:1.0
+        image: feridsaad/contacts-frontend:1.1
         ports:
         - containerPort: 80  # Changé de 8081 à 80
           name: http
